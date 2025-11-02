@@ -17,8 +17,9 @@ function Header() {
   return (
     <div className='p-5 shadow-md flex justify-between'>
       <div className='flex items-center gap-8'>
-        <Image src ='/price_pantry_.com.png' alt='logo'
-        width={150}
+        <Image src ='/price_pantry_.png' alt='logo'
+        width={100
+        }
         height={100}
         />
           <DropdownMenu>

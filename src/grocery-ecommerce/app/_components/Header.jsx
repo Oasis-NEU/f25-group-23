@@ -15,22 +15,26 @@ import {
 
 function Header() {
   return (
-    <div className='p-5 shadow-md flex justify-between'>
-      <div className='flex items-center gap-8'>
-        <Image src ='/price_pantry_.png' alt='logo'
-        width={100
-        }
-        height={100}
+    <div className="p-5 shadow-md flex justify-between items-center">
+      {/* Left Section */}
+      <div className="flex items-center gap-8">
+        <Image
+          src="/price_pantry_.png"
+          alt="logo"
+          width={100}
+          height={100}
         />
-          <DropdownMenu>
-          <DropdownMenuTrigger>
-           <h2 className='flex gap-2 items-center
-            border rounded-full p-2 px-10 bg-slate-200
-        '> 
-          <LayoutGrid className='h-5 w-5' />Category</h2>
-          </DropdownMenuTrigger>
-          <DropdownMenuTrigger>
 
+        {/* Category Dropdown */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button
+              className="flex gap-2 items-center border 
+              rounded-full p-2 px-6 bg-slate-200 hover:bg-slate-300 transition cursor pointer"
+            >
+              <LayoutGrid className="h-5 w-5" />
+              <span>Category</span>
+            </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -40,23 +44,28 @@ function Header() {
             <DropdownMenuItem>Team</DropdownMenuItem>
             <DropdownMenuItem>Subscription</DropdownMenuItem>
           </DropdownMenuContent>
-          </DropdownMenu>
+        </DropdownMenu>
 
-        <div className=' md:flex gap-3 border rounded-full p-2 px-5
-        hidden'>
-          <Search/>
-          <input type="text" 
-          placeholder='Search'
-          className='outline-none'
+        {/* Search Bar */}
+        <div className="hidden md:flex items-center gap-3 border rounded-full p-2 px-5">
+          <Search className="h-5 w-5" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="outline-none bg-transparent"
           />
         </div>
+      </div>
 
+      {/* Right Section (Shopping Bag) */}
+      <div className="flex gap-5 items-center">
+        <h2 className="flex gap-2 items-center text-lg">
+          <ShoppingBag className="h-5 w-5" /> 0
+        </h2>
+      </div>
     </div>
-    <div className='flex gap-5 items-center'>
-      <h2 className='flex gap-2 items-center text-lg'> <ShoppingBag/> 0</h2>
-  </div>
-  </div>
-  )
+  );
 }
+
 
 export default Header

@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         className={`${outfit.variable} antialiased`}
       > 
       <Header/>
-      Saloni, Cassiel, Ananya, Pranathi, Shreeya
+      
         {children} 
       </body>
     </html>
